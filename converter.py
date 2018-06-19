@@ -5,7 +5,8 @@ import html
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 
-# Convert YouTube XML subtitles into standard SRT subtitle format
+# Converts YouTube XML subtitles into standard SRT subtitle format
+# Requires Python 3.x, Requests (for API calls), and BeautifulSoup  (for xml parsing)
 
 def GetTime(x):
     time_parts = math.modf(float(x))
@@ -14,6 +15,9 @@ def GetTime(x):
 
     return "%02d:%02d:%02d,%03d" % (d.hour, d.minute, d.second, d.microsecond)
 
+# TODO: create and define a main function
+
+# TODO: make these command-line arguments instead
 in_url = input('Type the URL to convert: ')
 in_format = input('SRT or Transcript? ')
 r = requests.get(in_url)
